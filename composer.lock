@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0ac5eecbdf2dc274cc89be392c1aecb",
+    "content-hash": "184f6d9c3939da8fd417e508eb3409a3",
     "packages": [
         {
             "name": "dcarbone/gohttp",
@@ -54,58 +54,6 @@
                 "source": "https://github.com/dcarbone/gohttp/tree/v0.3.0"
             },
             "time": "2020-01-28T15:42:34+00:00"
-        },
-        {
-            "name": "dcarbone/gotime",
-            "version": "v0.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dcarbone/gotime.git",
-                "reference": "608b2d336bd865a549ad5d4686b17fea11ff7adf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dcarbone/gotime/zipball/608b2d336bd865a549ad5d4686b17fea11ff7adf",
-                "reference": "608b2d336bd865a549ad5d4686b17fea11ff7adf",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^10.5 || ^11.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/precision.php"
-                ],
-                "psr-4": {
-                    "DCarbone\\Go\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "The GOLANG Squad",
-                    "homepage": "https://golang.org/"
-                },
-                {
-                    "name": "Daniel Carbone",
-                    "email": "daniel.p.carbone@gmail.com"
-                }
-            ],
-            "description": "Golang-like time class(es) for PHP 8.0+",
-            "homepage": "https://github.com/dcarbone/gotime",
-            "support": {
-                "issues": "https://github.com/dcarbone/gotime/issues",
-                "source": "https://github.com/dcarbone/gotime/tree/v0.6.1"
-            },
-            "time": "2025-04-07T00:45:51+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
