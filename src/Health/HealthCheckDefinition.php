@@ -79,7 +79,7 @@ class HealthCheckDefinition extends AbstractModel implements \JsonSerializable
     public ReadableDuration $Timeout;
     public ReadableDuration $DeregisterCriticalServiceAfter;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->Interval)) {
@@ -149,32 +149,32 @@ class HealthCheckDefinition extends AbstractModel implements \JsonSerializable
         return $this->TCP;
     }
 
-    public function getIntervalDuration(): ?Duration
+    public function getIntervalDuration(): Duration|null
     {
         return $this->IntervalDuration;
     }
 
-    public function getTimeoutDuration(): ?Duration
+    public function getTimeoutDuration(): Duration|null
     {
         return $this->TimeoutDuration;
     }
 
-    public function getDeregisterCriticalServiceAfterDuration(): ?Duration
+    public function getDeregisterCriticalServiceAfterDuration(): Duration|null
     {
         return $this->DeregisterCriticalServiceAfterDuration;
     }
 
-    public function getInterval(): ?ReadableDuration
+    public function getInterval(): ReadableDuration|null
     {
         return $this->Interval;
     }
 
-    public function getTimeout(): ?ReadableDuration
+    public function getTimeout(): ReadableDuration|null
     {
         return $this->Timeout;
     }
 
-    public function getDeregisterCriticalServiceAfter(): ?ReadableDuration
+    public function getDeregisterCriticalServiceAfter(): ReadableDuration|null
     {
         return $this->DeregisterCriticalServiceAfter;
     }

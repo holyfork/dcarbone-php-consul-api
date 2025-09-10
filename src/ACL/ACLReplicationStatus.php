@@ -47,7 +47,7 @@ class ACLReplicationStatus extends AbstractModel
     public Time\Time $LastSuccess;
     public Time\Time $LastError;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->LastSuccess)) {

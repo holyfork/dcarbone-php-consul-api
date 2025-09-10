@@ -34,7 +34,7 @@ class ACLLoginParams extends AbstractModel
 
     public string $AuthMethod = '';
     public string $BearerToken = '';
-    public ?FakeMap $Meta = null;
+    public FakeMap|null $Meta = null;
 
     public function getAuthMethod(): string
     {
@@ -58,7 +58,7 @@ class ACLLoginParams extends AbstractModel
         return $this;
     }
 
-    public function getMeta(): ?FakeMap
+    public function getMeta(): FakeMap|null
     {
         return $this->Meta;
     }

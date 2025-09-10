@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class PreparedQueryDefinitionsResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $PreparedQueryDefinitions = null;
+    public array|null $PreparedQueryDefinitions = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->PreparedQueryDefinitions;
     }

@@ -38,7 +38,7 @@ class PassiveHealthCheck extends AbstractModel
     public Time\Duration $Interval;
     public int $MaxFailures = 0;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Interval)) {

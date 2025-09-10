@@ -48,7 +48,7 @@ class AutopilotServer extends AbstractModel implements \JsonSerializable
     public string $Address = '';
     public string $NodeStatus = '';
     public string $Version = '';
-    public ?ReadableDuration $LastContact = null;
+    public ReadableDuration|null $LastContact = null;
     public int $LastTerm = 0;
     public int $LastIndex = 0;
     public bool $Healthy = false;
@@ -60,7 +60,7 @@ class AutopilotServer extends AbstractModel implements \JsonSerializable
     public array $Meta = [];
     public string $NodeType = '';
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->StableSince)) {
@@ -123,12 +123,12 @@ class AutopilotServer extends AbstractModel implements \JsonSerializable
         return $this;
     }
 
-    public function getLastContact(): ?ReadableDuration
+    public function getLastContact(): ReadableDuration|null
     {
         return $this->LastContact;
     }
 
-    public function setLastContact(?ReadableDuration $LastContact): self
+    public function setLastContact(ReadableDuration|null $LastContact): self
     {
         $this->LastContact = $LastContact;
         return $this;

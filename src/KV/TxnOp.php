@@ -53,50 +53,50 @@ class TxnOp extends AbstractModel
     private const FIELD_SERVICE = 'Service';
     private const FIELD_CHECK   = 'Check';
 
-    public ?KVTxnOp $KV = null;
-    public ?NodeTxnOp $Node = null;
-    public ?ServiceTxnOp $Service = null;
-    public ?CheckTxnOp $Check = null;
+    public KVTxnOp|null $KV = null;
+    public NodeTxnOp|null $Node = null;
+    public ServiceTxnOp|null $Service = null;
+    public CheckTxnOp|null $Check = null;
 
-    public function getKV(): ?KVTxnOp
+    public function getKV(): KVTxnOp|null
     {
         return $this->KV;
     }
 
-    public function setKV(?KVTxnOp $KV): self
+    public function setKV(KVTxnOp|null $KV): self
     {
         $this->KV = $KV;
         return $this;
     }
 
-    public function getNode(): ?NodeTxnOp
+    public function getNode(): NodeTxnOp|null
     {
         return $this->Node;
     }
 
-    public function setNode(?NodeTxnOp $Node): self
+    public function setNode(NodeTxnOp|null $Node): self
     {
         $this->Node = $Node;
         return $this;
     }
 
-    public function getService(): ?ServiceTxnOp
+    public function getService(): ServiceTxnOp|null
     {
         return $this->Service;
     }
 
-    public function setService(?ServiceTxnOp $Service): self
+    public function setService(ServiceTxnOp|null $Service): self
     {
         $this->Service = $Service;
         return $this;
     }
 
-    public function getCheck(): ?CheckTxnOp
+    public function getCheck(): CheckTxnOp|null
     {
         return $this->Check;
     }
 
-    public function setCheck(?CheckTxnOp $Check): self
+    public function setCheck(CheckTxnOp|null $Check): self
     {
         $this->Check = $Check;
         return $this;

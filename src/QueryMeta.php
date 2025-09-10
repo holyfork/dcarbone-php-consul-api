@@ -29,10 +29,10 @@ class QueryMeta
     public string $LastContentHash = '';
     public int $LastContact = 0;
     public bool $KnownLeader = false;
-    public ?Time\Duration $RequestTime = null;
+    public Time\Duration|null $RequestTime = null;
     public bool $AddressTranslationEnabled = false;
     public bool $CacheHit = false;
-    public ?Time\Duration $CacheAge = null;
+    public Time\Duration|null $CacheAge = null;
 
     public function getRequestUrl(): string
     {
@@ -59,7 +59,7 @@ class QueryMeta
         return $this->KnownLeader;
     }
 
-    public function getRequestTime(): ?Time\Duration
+    public function getRequestTime(): Time\Duration|null
     {
         return $this->RequestTime;
     }
@@ -74,7 +74,7 @@ class QueryMeta
         return $this->CacheHit;
     }
 
-    public function getCacheAge(): ?Time\Duration
+    public function getCacheAge(): Time\Duration|null
     {
         return $this->CacheAge;
     }

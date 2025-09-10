@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class SessionEntriesWriteResponse extends AbstractValuedWriteResponse implements UnmarshalledResponseInterface
 {
-    public ?array $SessionEntries = null;
+    public array|null $SessionEntries = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->SessionEntries;
     }

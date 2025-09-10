@@ -41,14 +41,14 @@ class KVTxnResponse extends AbstractModel
     private const FIELD_ERRORS  = 'Errors';
 
     public array $Results = [];
-    public ?TxnErrors $Errors = null;
+    public TxnErrors|null $Errors = null;
 
     public function getResults(): array
     {
         return $this->Results;
     }
 
-    public function getErrors(): ?TxnErrors
+    public function getErrors(): TxnErrors|null
     {
         return $this->Errors;
     }

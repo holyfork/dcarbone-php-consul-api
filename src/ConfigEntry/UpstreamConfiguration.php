@@ -68,9 +68,9 @@ class UpstreamConfiguration extends AbstractModel
     public string $EnvoyClusterJSON = '';
     public string $Protocol = '';
     public int $ConnectTimeoutMs = 0;
-    public ?UpstreamLimits $UpstreamLimits = null;
-    public ?PassiveHealthCheck $PassiveHealthCheck = null;
-    public ?MeshGatewayConfig $MeshGateway = null;
+    public UpstreamLimits|null $UpstreamLimits = null;
+    public PassiveHealthCheck|null $PassiveHealthCheck = null;
+    public MeshGatewayConfig|null $MeshGateway = null;
 
     public function getName(): string
     {
@@ -138,34 +138,34 @@ class UpstreamConfiguration extends AbstractModel
         return $this;
     }
 
-    public function getUpstreamLimits(): ?UpstreamLimits
+    public function getUpstreamLimits(): UpstreamLimits|null
     {
         return $this->UpstreamLimits;
     }
 
-    public function setUpstreamLimits(?UpstreamLimits $UpstreamLimits): self
+    public function setUpstreamLimits(UpstreamLimits|null $UpstreamLimits): self
     {
         $this->UpstreamLimits = $UpstreamLimits;
         return $this;
     }
 
-    public function getPassiveHealthCheck(): ?PassiveHealthCheck
+    public function getPassiveHealthCheck(): PassiveHealthCheck|null
     {
         return $this->PassiveHealthCheck;
     }
 
-    public function setPassiveHealthCheck(?PassiveHealthCheck $PassiveHealthCheck): self
+    public function setPassiveHealthCheck(PassiveHealthCheck|null $PassiveHealthCheck): self
     {
         $this->PassiveHealthCheck = $PassiveHealthCheck;
         return $this;
     }
 
-    public function getMeshGateway(): ?MeshGatewayConfig
+    public function getMeshGateway(): MeshGatewayConfig|null
     {
         return $this->MeshGateway;
     }
 
-    public function setMeshGateway(?MeshGatewayConfig $MeshGateway): self
+    public function setMeshGateway(MeshGatewayConfig|null $MeshGateway): self
     {
         $this->MeshGateway = $MeshGateway;
         return $this;

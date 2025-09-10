@@ -51,7 +51,7 @@ class HealthCheck extends AbstractModel
     public int $CreateIndex = 0;
     public int $ModifyIndex = 0;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Definition)) {

@@ -25,7 +25,7 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class NodesResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $Nodes = null;
+    public array|null $Nodes = null;
 
     public function getValue(): mixed
     {

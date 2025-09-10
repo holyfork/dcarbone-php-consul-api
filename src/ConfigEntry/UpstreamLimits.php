@@ -41,38 +41,38 @@ class UpstreamLimits extends AbstractModel
     private const FIELD_MAX_PENDING_REQUESTS    = 'MaxPendingRequests';
     private const FIELD_MAX_CONCURRENT_REQUESTS = 'MaxConcurrentRequests';
 
-    public ?int $MaxConnections = null;
-    public ?int $MaxPendingRequests = null;
-    public ?int $MaxConcurrentRequests = null;
+    public int|null $MaxConnections = null;
+    public int|null $MaxPendingRequests = null;
+    public int|null $MaxConcurrentRequests = null;
 
-    public function getMaxConnections(): ?int
+    public function getMaxConnections(): int|null
     {
         return $this->MaxConnections;
     }
 
-    public function setMaxConnections(?int $MaxConnections): self
+    public function setMaxConnections(int|null $MaxConnections): self
     {
         $this->MaxConnections = $MaxConnections;
         return $this;
     }
 
-    public function getMaxPendingRequests(): ?int
+    public function getMaxPendingRequests(): int|null
     {
         return $this->MaxPendingRequests;
     }
 
-    public function setMaxPendingRequests(?int $MaxPendingRequests): self
+    public function setMaxPendingRequests(int|null $MaxPendingRequests): self
     {
         $this->MaxPendingRequests = $MaxPendingRequests;
         return $this;
     }
 
-    public function getMaxConcurrentRequests(): ?int
+    public function getMaxConcurrentRequests(): int|null
     {
         return $this->MaxConcurrentRequests;
     }
 
-    public function setMaxConcurrentRequests(?int $MaxConcurrentRequests): self
+    public function setMaxConcurrentRequests(int|null $MaxConcurrentRequests): self
     {
         $this->MaxConcurrentRequests = $MaxConcurrentRequests;
         return $this;

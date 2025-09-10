@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class OperatorSerfMembersResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $SerfMembers = null;
+    public array|null $SerfMembers = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->SerfMembers;
     }

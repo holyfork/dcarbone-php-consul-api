@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLPolicyWriteResponse extends AbstractValuedWriteResponse implements UnmarshalledResponseInterface
 {
-    public ?ACLPolicy $ACLPolicy = null;
+    public ACLPolicy|null $ACLPolicy = null;
 
-    public function getValue(): ?ACLPolicy
+    public function getValue(): ACLPolicy|null
     {
         return $this->ACLPolicy;
     }

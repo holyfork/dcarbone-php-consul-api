@@ -71,7 +71,7 @@ class GatewayService extends AbstractModel
     public string $SNI = '';
     public string $FromWildCard = '';
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Gateway)) {

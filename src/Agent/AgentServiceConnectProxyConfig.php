@@ -72,15 +72,15 @@ class AgentServiceConnectProxyConfig extends AbstractModel
     public string $DestinationServiceID = '';
     public string $LocalServiceAddress = '';
     public int $LocalServicePort = 0;
-    public ?FakeMap $Config = null;
+    public FakeMap|null $Config = null;
     public string $LocalServiceSocketPath = '';
     public string $Mode = '';
-    public ?TransparentProxyConfig $TransparentProxy = null;
+    public TransparentProxyConfig|null $TransparentProxy = null;
     public array $Upstreams = [];
     public MeshGatewayConfig $MeshGateway;
     public ExposeConfig $Expose;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->MeshGateway)) {
@@ -174,18 +174,18 @@ class AgentServiceConnectProxyConfig extends AbstractModel
         return $this;
     }
 
-    public function getTransparentProxy(): ?TransparentProxyConfig
+    public function getTransparentProxy(): TransparentProxyConfig|null
     {
         return $this->TransparentProxy;
     }
 
-    public function setTransparentProxy(?TransparentProxyConfig $TransparentProxy): self
+    public function setTransparentProxy(TransparentProxyConfig|null $TransparentProxy): self
     {
         $this->TransparentProxy = $TransparentProxy;
         return $this;
     }
 
-    public function getConfig(): ?FakeMap
+    public function getConfig(): FakeMap|null
     {
         return $this->Config;
     }

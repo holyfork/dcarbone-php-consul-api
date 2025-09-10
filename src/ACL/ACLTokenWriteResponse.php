@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLTokenWriteResponse extends AbstractValuedWriteResponse implements UnmarshalledResponseInterface
 {
-    public ?ACLToken $ACLToken = null;
+    public ACLToken|null $ACLToken = null;
 
-    public function getValue(): ?ACLToken
+    public function getValue(): ACLToken|null
     {
         return $this->ACLToken;
     }

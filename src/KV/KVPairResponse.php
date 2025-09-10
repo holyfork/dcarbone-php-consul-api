@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class KVPairResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?KVPair $KVPair = null;
+    public KVPair|null $KVPair = null;
 
-    public function getValue(): ?KVPair
+    public function getValue(): KVPair|null
     {
         return $this->KVPair;
     }

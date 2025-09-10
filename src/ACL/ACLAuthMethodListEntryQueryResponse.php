@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLAuthMethodListEntryQueryResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $ACLAuthMethodListEntries = [];
+    public array|null $ACLAuthMethodListEntries = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ACLAuthMethodListEntries;
     }

@@ -103,14 +103,14 @@ class AgentServiceRegistration extends AbstractModel
     public array $TaggedAddresses = [];
     public bool $EnableTagOverride = false;
     public array $Meta = [];
-    public ?AgentWeights $Weights = null;
-    public ?AgentServiceCheck $Check = null;
+    public AgentWeights|null $Weights = null;
+    public AgentServiceCheck|null $Check = null;
     public AgentServiceChecks $Checks;
-    public ?AgentServiceConnectProxyConfig $Proxy = null;
-    public ?AgentServiceConnect $Connect = null;
+    public AgentServiceConnectProxyConfig|null $Proxy = null;
+    public AgentServiceConnect|null $Connect = null;
     public string $Namespace = '';
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Checks)) {
@@ -173,7 +173,7 @@ class AgentServiceRegistration extends AbstractModel
         return $this;
     }
 
-    public function getTaggedAddresses(): ?array
+    public function getTaggedAddresses(): array|null
     {
         return $this->TaggedAddresses;
     }
@@ -195,7 +195,7 @@ class AgentServiceRegistration extends AbstractModel
         return $this;
     }
 
-    public function getMeta(): ?array
+    public function getMeta(): array|null
     {
         return $this->Meta;
     }
@@ -206,23 +206,23 @@ class AgentServiceRegistration extends AbstractModel
         return $this;
     }
 
-    public function getWeights(): ?AgentWeights
+    public function getWeights(): AgentWeights|null
     {
         return $this->Weights;
     }
 
-    public function setWeights(?AgentWeights $Weights): self
+    public function setWeights(AgentWeights|null $Weights): self
     {
         $this->Weights = $Weights;
         return $this;
     }
 
-    public function getCheck(): ?AgentServiceCheck
+    public function getCheck(): AgentServiceCheck|null
     {
         return $this->Check;
     }
 
-    public function setCheck(?AgentServiceCheck $Check): self
+    public function setCheck(AgentServiceCheck|null $Check): self
     {
         $this->Check = $Check;
         return $this;
@@ -239,23 +239,23 @@ class AgentServiceRegistration extends AbstractModel
         return $this;
     }
 
-    public function getProxy(): ?AgentServiceConnectProxyConfig
+    public function getProxy(): AgentServiceConnectProxyConfig|null
     {
         return $this->Proxy;
     }
 
-    public function setProxy(?AgentServiceConnectProxyConfig $Proxy): self
+    public function setProxy(AgentServiceConnectProxyConfig|null $Proxy): self
     {
         $this->Proxy = $Proxy;
         return $this;
     }
 
-    public function getConnect(): ?AgentServiceConnect
+    public function getConnect(): AgentServiceConnect|null
     {
         return $this->Connect;
     }
 
-    public function setConnect(?AgentServiceConnect $Connect): self
+    public function setConnect(AgentServiceConnect|null $Connect): self
     {
         $this->Connect = $Connect;
         return $this;

@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class CoordinateEntriesResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $Nodes = null;
+    public array|null $Nodes = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->Nodes;
     }

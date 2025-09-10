@@ -27,7 +27,7 @@ trait ConfigEntryTrait
     public string $Kind = '';
     public string $Name = '';
     public string $Namespace = '';
-    public ?FakeMap $Meta = null;
+    public FakeMap|null $Meta = null;
     public int $CreateIndex = 0;
     public int $ModifyIndex = 0;
 
@@ -64,7 +64,7 @@ trait ConfigEntryTrait
         return $this;
     }
 
-    public function getMeta(): ?FakeMap
+    public function getMeta(): FakeMap|null
     {
         return $this->Meta;
     }

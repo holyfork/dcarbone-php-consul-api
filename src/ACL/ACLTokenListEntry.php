@@ -82,13 +82,13 @@ class ACLTokenListEntry extends AbstractModel
     public array $NodeIdentities = [];
     public bool $Local = false;
     public string $AuthMethod = '';
-    public ?Time\Time $ExpirationTime = null;
+    public Time\Time|null $ExpirationTime = null;
     public Time\Time $CreateTime;
     public string $Hash = '';
     public bool $Legacy = false;
     public string $Namespace = '';
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->CreateTime)) {
@@ -206,12 +206,12 @@ class ACLTokenListEntry extends AbstractModel
         return $this;
     }
 
-    public function getExpirationTime(): ?Time\Time
+    public function getExpirationTime(): Time\Time|null
     {
         return $this->ExpirationTime;
     }
 
-    public function setExpirationTime(?Time\Time $ExpirationTime): self
+    public function setExpirationTime(Time\Time|null $ExpirationTime): self
     {
         $this->ExpirationTime = $ExpirationTime;
         return $this;

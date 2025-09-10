@@ -29,9 +29,9 @@ class AgentHealthServicesResponse extends AbstractResponse
     use ErrorContainer;
 
     public string $AggregatedStatus = '';
-    public ?array $AgentServiceChecksInfos = null;
+    public array|null $AgentServiceChecksInfos = null;
 
-    public function __construct(string $aggregatedStatus, ?array $checkInfos, ?Error $err)
+    public function __construct(string $aggregatedStatus, array|null $checkInfos, Error|null $err)
     {
         $this->AggregatedStatus = $aggregatedStatus;
         if (null !== $checkInfos) {
@@ -48,7 +48,7 @@ class AgentHealthServicesResponse extends AbstractResponse
         return $this->AggregatedStatus;
     }
 
-    public function getAgentServiceChecksInfos(): ?array
+    public function getAgentServiceChecksInfos(): array|null
     {
         return $this->AgentServiceChecksInfos;
     }

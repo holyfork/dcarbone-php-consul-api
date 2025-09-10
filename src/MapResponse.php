@@ -22,9 +22,9 @@ namespace DCarbone\PHPConsulAPI;
 
 class MapResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?array $Map = null;
+    public array|null $Map = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->Map;
     }

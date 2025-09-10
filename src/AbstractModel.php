@@ -37,7 +37,7 @@ abstract class AbstractModel implements \JsonSerializable
      *
      * @param array|null $data
      */
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         // fast path for "empty"
         if (null === $data || [] === $data) {

@@ -45,7 +45,7 @@ class SerfMember extends AbstractModel
     public string $Status = '';
     public Time\Duration $RTT;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->RTT)) {

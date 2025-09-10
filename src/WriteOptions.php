@@ -29,9 +29,9 @@ class WriteOptions extends AbstractModel implements RequestOptions
     public string $Token = '';
     public int $RelayFactor = 0;
 
-    public ?Time\Duration $Timeout = null;
+    public Time\Duration|null $Timeout = null;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!($this->Timeout instanceof Time\Duration)) {
@@ -79,7 +79,7 @@ class WriteOptions extends AbstractModel implements RequestOptions
         $this->RelayFactor = $relayFactor;
     }
 
-    public function getTimeout(): ?Time\Duration
+    public function getTimeout(): Time\Duration|null
     {
         return $this->Timeout;
     }

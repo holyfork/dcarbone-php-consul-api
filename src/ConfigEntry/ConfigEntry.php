@@ -45,7 +45,7 @@ interface ConfigEntry
 
     public function GetNamespace(): string;
 
-    public function GetMeta(): ?FakeMap;
+    public function GetMeta(): FakeMap|null;
 
     public function GetCreateIndex(): int;
 

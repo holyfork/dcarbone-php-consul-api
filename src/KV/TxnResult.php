@@ -56,50 +56,50 @@ class TxnResult extends AbstractModel
     private const FIELD_SERVICE = 'Service';
     private const FIELD_CHECK   = 'Check';
 
-    public ?KVPair $KV = null;
-    public ?Node $Node = null;
-    public ?CatalogService $Service = null;
-    public ?HealthCheck $Check = null;
+    public KVPair|null $KV = null;
+    public Node|null $Node = null;
+    public CatalogService|null $Service = null;
+    public HealthCheck|null $Check = null;
 
-    public function getKV(): ?KVPair
+    public function getKV(): KVPair|null
     {
         return $this->KV;
     }
 
-    public function setKV(?KVPair $KV): self
+    public function setKV(KVPair|null $KV): self
     {
         $this->KV = $KV;
         return $this;
     }
 
-    public function getNode(): ?Node
+    public function getNode(): Node|null
     {
         return $this->Node;
     }
 
-    public function setNode(?Node $Node): self
+    public function setNode(Node|null $Node): self
     {
         $this->Node = $Node;
         return $this;
     }
 
-    public function getService(): ?CatalogService
+    public function getService(): CatalogService|null
     {
         return $this->Service;
     }
 
-    public function setService(?CatalogService $Service): self
+    public function setService(CatalogService|null $Service): self
     {
         $this->Service = $Service;
         return $this;
     }
 
-    public function getCheck(): ?HealthCheck
+    public function getCheck(): HealthCheck|null
     {
         return $this->Check;
     }
 
-    public function setCheck(?HealthCheck $Check): self
+    public function setCheck(HealthCheck|null $Check): self
     {
         $this->Check = $Check;
         return $this;

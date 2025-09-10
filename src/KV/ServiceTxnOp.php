@@ -39,7 +39,7 @@ class ServiceTxnOp extends AbstractModel
     public string $Node = '';
     public AgentService $Service;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         $this->Service = new AgentService(null);

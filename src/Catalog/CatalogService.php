@@ -71,7 +71,7 @@ class CatalogService extends AbstractModel
     public Weights $ServiceWeights;
     public bool $ServiceEnableTagOverride = false;
     public int $CreateIndex = 0;
-    public ?AgentServiceConnectProxyConfig $ServiceProxy = null;
+    public AgentServiceConnectProxyConfig|null $ServiceProxy = null;
     public int $ModifyIndex = 0;
     public string $Namespace = '';
 
@@ -251,12 +251,12 @@ class CatalogService extends AbstractModel
         return $this;
     }
 
-    public function getServiceProxy(): ?AgentServiceConnectProxyConfig
+    public function getServiceProxy(): AgentServiceConnectProxyConfig|null
     {
         return $this->ServiceProxy;
     }
 
-    public function setServiceProxy(?AgentServiceConnectProxyConfig $ServiceProxy): self
+    public function setServiceProxy(AgentServiceConnectProxyConfig|null $ServiceProxy): self
     {
         $this->ServiceProxy = $ServiceProxy;
         return $this;
@@ -273,12 +273,12 @@ class CatalogService extends AbstractModel
         return $this;
     }
 
-    public function getNamespace(): ?string
+    public function getNamespace(): string|null
     {
         return $this->Namespace;
     }
 
-    public function setNamespace(?string $Namespace): self
+    public function setNamespace(string|null $Namespace): self
     {
         $this->Namespace = $Namespace;
         return $this;

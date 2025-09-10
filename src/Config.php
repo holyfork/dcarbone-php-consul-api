@@ -79,9 +79,9 @@ class Config
      *
      * @var \DCarbone\PHPConsulAPI\HttpAuth|null
      */
-    public ?HttpAuth $HttpAuth = null;
+    public HttpAuth|null $HttpAuth = null;
 
-    public ?Time\Duration $WaitTime = null;
+    public Time\Duration|null $WaitTime = null;
 
     public string $Token = '';
 
@@ -142,7 +142,7 @@ class Config
         }
     }
 
-    public static function merge(?self $inc): self
+    public static function merge(self|null $inc): self
     {
         $actual = static::newDefaultConfig();
         if (null === $inc) {
@@ -396,7 +396,7 @@ class Config
         return $ret;
     }
 
-    protected static function _tryGetEnvParam(string $param): ?string
+    protected static function _tryGetEnvParam(string $param): string|null
     {
         if (isset($_ENV[$param])) {
             return $_ENV[$param];

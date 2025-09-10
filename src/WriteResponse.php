@@ -30,7 +30,7 @@ class WriteResponse extends AbstractResponse
         return \is_int($offset) && 0 <= $offset && $offset < 2;
     }
 
-    public function offsetGet(mixed $offset): Error|null|WriteMeta
+    public function offsetGet(mixed $offset): Error|WriteMeta|null
     {
         if (0 === $offset) {
             return $this->WriteMeta;

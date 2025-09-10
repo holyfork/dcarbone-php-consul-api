@@ -49,7 +49,7 @@ class AgentCheck extends AbstractModel
     public HealthCheckDefinition $Definition;
     public string $Namespace = '';
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->Definition)) {

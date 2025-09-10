@@ -52,7 +52,7 @@ class PreparedQueryDefinition extends AbstractModel
     public QueryDNSOptions $DNS;
     public QueryTemplate $Template;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Service)) {

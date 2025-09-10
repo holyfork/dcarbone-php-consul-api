@@ -51,7 +51,7 @@ class ServiceQuery extends AbstractModel
     public array $ServiceMeta = [];
     public bool $Connect = false;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Failover)) {

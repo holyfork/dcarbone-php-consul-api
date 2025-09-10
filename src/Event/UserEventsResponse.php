@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class UserEventsResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $UserEvents = null;
+    public array|null $UserEvents = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->UserEvents;
     }

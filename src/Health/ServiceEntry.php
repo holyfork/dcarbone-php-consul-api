@@ -48,11 +48,11 @@ class ServiceEntry extends AbstractModel
     private const FIELD_SERVICE = 'Service';
     private const FIELD_CHECKS  = 'Checks';
 
-    public ?Node $Node = null;
-    public ?AgentService $Service = null;
+    public Node|null $Node = null;
+    public AgentService|null $Service = null;
     public HealthChecks $Checks;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Checks)) {
@@ -60,23 +60,23 @@ class ServiceEntry extends AbstractModel
         }
     }
 
-    public function getNode(): ?Node
+    public function getNode(): Node|null
     {
         return $this->Node;
     }
 
-    public function setNode(?Node $Node): self
+    public function setNode(Node|null $Node): self
     {
         $this->Node = $Node;
         return $this;
     }
 
-    public function getService(): ?AgentService
+    public function getService(): AgentService|null
     {
         return $this->Service;
     }
 
-    public function setService(?AgentService $Service): self
+    public function setService(AgentService|null $Service): self
     {
         $this->Service = $Service;
         return $this;

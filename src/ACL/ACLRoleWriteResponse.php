@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLRoleWriteResponse extends AbstractValuedWriteResponse implements UnmarshalledResponseInterface
 {
-    public ?ACLRole $ACLRole = null;
+    public ACLRole|null $ACLRole = null;
 
-    public function getValue(): ?ACLRole
+    public function getValue(): ACLRole|null
     {
         return $this->ACLRole;
     }

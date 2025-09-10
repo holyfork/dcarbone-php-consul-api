@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLReplicationStatusResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?ACLReplicationStatus $ACLReplicationStatus = null;
+    public ACLReplicationStatus|null $ACLReplicationStatus = null;
 
-    public function getValue(): ?ACLReplicationStatus
+    public function getValue(): ACLReplicationStatus|null
     {
         return $this->ACLReplicationStatus;
     }

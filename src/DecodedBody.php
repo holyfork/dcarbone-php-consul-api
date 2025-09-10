@@ -26,7 +26,7 @@ final class DecodedBody
 
     public mixed $Decoded = null;
 
-    public function __construct(mixed $decoded, ?Error $err)
+    public function __construct(mixed $decoded, Error|null $err)
     {
         $this->Decoded = $decoded;
         $this->Err     = $err;

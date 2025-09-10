@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class HealthChecksResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?HealthChecks $HealthChecks = null;
+    public HealthChecks|null $HealthChecks = null;
 
-    public function getValue(): ?HealthChecks
+    public function getValue(): HealthChecks|null
     {
         return $this->HealthChecks;
     }

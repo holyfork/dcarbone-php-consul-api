@@ -24,7 +24,7 @@ class FakeMap extends \ArrayIterator implements \ArrayAccess, \Countable, \Itera
 {
     private array $_map = [];
 
-    public function __construct(?array $data)
+    public function __construct(array|null $data)
     {
         if (null === $data || [] === $data) {
             return;
@@ -32,7 +32,7 @@ class FakeMap extends \ArrayIterator implements \ArrayAccess, \Countable, \Itera
         $this->_map = $data;
     }
 
-    public static function parse(array|FakeMap|\stdClass|null $input): ?self
+    public static function parse(array|FakeMap|\stdClass|null $input): self|null
     {
         if (null === $input) {
             return null;

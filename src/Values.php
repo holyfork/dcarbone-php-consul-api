@@ -81,7 +81,7 @@ class Values implements \Iterator, \ArrayAccess, \Countable, \JsonSerializable
         next($this->values);
     }
 
-    public function key(): ?string
+    public function key(): string|null
     {
         return key($this->values);
     }

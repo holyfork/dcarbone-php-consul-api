@@ -87,7 +87,7 @@ trait Unmarshaller
         };
     }
 
-    private function buildObjectValue(string $field, null|object|array $value, string $class, bool $nullable): ?object
+    private function buildObjectValue(string $field, object|array|null $value, string $class, bool $nullable): object|null
     {
         // if the incoming value is null...
         if (null === $value) {

@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class OperatorAutopilotConfigurationResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?AutopilotConfiguration $AutopilotConfiguration = null;
+    public AutopilotConfiguration|null $AutopilotConfiguration = null;
 
-    public function getValue(): ?AutopilotConfiguration
+    public function getValue(): AutopilotConfiguration|null
     {
         return $this->AutopilotConfiguration;
     }

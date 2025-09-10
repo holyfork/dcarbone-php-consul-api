@@ -38,7 +38,7 @@ class NodeTxnOp extends AbstractModel
     public string $Verb = '';
     public Node $Node;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Node)) {

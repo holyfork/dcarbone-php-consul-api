@@ -38,7 +38,7 @@ class EnvoyExtension extends AbstractModel
     public string $ConsulVersion = '';
     public string $EnvoyVersion = '';
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Arguments)) {
@@ -68,7 +68,7 @@ class EnvoyExtension extends AbstractModel
         return $this;
     }
 
-    public function getArguments(): ?FakeMap
+    public function getArguments(): FakeMap|null
     {
         return $this->Arguments;
     }

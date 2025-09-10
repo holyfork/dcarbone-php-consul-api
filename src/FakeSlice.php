@@ -28,7 +28,7 @@ abstract class FakeSlice implements \Iterator, \ArrayAccess, \Countable, \JsonSe
 
     private int $_size = 0;
 
-    public function __construct(?array $children = [])
+    public function __construct(array|null $children = [])
     {
         if (!isset($this->containedClass)) {
             throw new \DomainException(
@@ -69,7 +69,7 @@ abstract class FakeSlice implements \Iterator, \ArrayAccess, \Countable, \JsonSe
         next($this->_list);
     }
 
-    public function key(): ?int
+    public function key(): int|null
     {
         return key($this->_list);
     }
@@ -89,7 +89,7 @@ abstract class FakeSlice implements \Iterator, \ArrayAccess, \Countable, \JsonSe
         return \is_int($offset) && isset($this->_list[$offset]);
     }
 
-    public function offsetGet(mixed $offset): ?AbstractModel
+    public function offsetGet(mixed $offset): AbstractModel|null
     {
         $this->_validateOffset($offset);
         return $this->_list[$offset];
@@ -159,7 +159,7 @@ abstract class FakeSlice implements \Iterator, \ArrayAccess, \Countable, \JsonSe
         }
     }
 
-    private function _validateValue(mixed $value): ?AbstractModel
+    private function _validateValue(mixed $value): AbstractModel|null
     {
         // fast path for null values
         if (null === $value) {

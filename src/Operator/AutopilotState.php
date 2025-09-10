@@ -60,7 +60,7 @@ class AutopilotState extends AbstractModel
     public array $Voters = [];
     public array $ReadReplicas = [];
     public array $RedundancyZone = [];
-    public ?AutopilotUpgrade $Upgrade = null;
+    public AutopilotUpgrade|null $Upgrade = null;
 
     public function isHealthy(): bool
     {
@@ -150,12 +150,12 @@ class AutopilotState extends AbstractModel
         return $this;
     }
 
-    public function getUpgrade(): ?AutopilotUpgrade
+    public function getUpgrade(): AutopilotUpgrade|null
     {
         return $this->Upgrade;
     }
 
-    public function setUpgrade(?AutopilotUpgrade $Upgrade): self
+    public function setUpgrade(AutopilotUpgrade|null $Upgrade): self
     {
         $this->Upgrade = $Upgrade;
         return $this;

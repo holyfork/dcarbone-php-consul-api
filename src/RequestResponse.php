@@ -27,10 +27,10 @@ final class RequestResponse
 {
     public RequestMeta $RequestMeta;
     public Time\Duration $Duration;
-    public ?ResponseInterface $Response;
-    public ?Error $Err;
+    public ResponseInterface|null $Response;
+    public Error|null $Err;
 
-    public function __construct(RequestMeta $meta, Time\Duration $dur, ?ResponseInterface $resp, ?Error $err)
+    public function __construct(RequestMeta $meta, Time\Duration $dur, ResponseInterface|null $resp, Error|null $err)
     {
         $this->RequestMeta = $meta;
         $this->Duration    = $dur;
@@ -48,12 +48,12 @@ final class RequestResponse
         return $this->Duration;
     }
 
-    public function getResponse(): ?ResponseInterface
+    public function getResponse(): ResponseInterface|null
     {
         return $this->Response;
     }
 
-    public function getErr(): ?Error
+    public function getErr(): Error|null
     {
         return $this->Err;
     }

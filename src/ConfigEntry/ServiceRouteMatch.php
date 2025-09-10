@@ -36,14 +36,14 @@ class ServiceRouteMatch extends AbstractModel
 
     private const FIELD_HTTP = 'HTTP';
 
-    public ?ServiceRouteHTTPMatch $HTTP = null;
+    public ServiceRouteHTTPMatch|null $HTTP = null;
 
-    public function getHTTP(): ?ServiceRouteHTTPMatch
+    public function getHTTP(): ServiceRouteHTTPMatch|null
     {
         return $this->HTTP;
     }
 
-    public function setHTTP(?ServiceRouteHTTPMatch $HTTP): self
+    public function setHTTP(ServiceRouteHTTPMatch|null $HTTP): self
     {
         $this->HTTP = $HTTP;
         return $this;

@@ -29,9 +29,9 @@ class AgentHealthServiceResponse extends AbstractResponse
     use ErrorContainer;
 
     public string $AggregatedStatus = '';
-    public ?AgentServiceChecksInfo $AgentServiceChecksInfo = null;
+    public AgentServiceChecksInfo|null $AgentServiceChecksInfo = null;
 
-    public function __construct(string $aggregatedStatus, ?array $checkInfo, ?Error $err)
+    public function __construct(string $aggregatedStatus, array|null $checkInfo, Error|null $err)
     {
         $this->AggregatedStatus = $aggregatedStatus;
         if (null !== $checkInfo) {
@@ -45,7 +45,7 @@ class AgentHealthServiceResponse extends AbstractResponse
         return $this->AggregatedStatus;
     }
 
-    public function getAgentServiceChecksInfos(): ?AgentServiceChecksInfo
+    public function getAgentServiceChecksInfos(): AgentServiceChecksInfo|null
     {
         return $this->AgentServiceChecksInfo;
     }
@@ -55,7 +55,7 @@ class AgentHealthServiceResponse extends AbstractResponse
         return \is_int($offset) && 0 <= $offset && $offset < 3;
     }
 
-    public function offsetGet(mixed $offset): Error|string|null|AgentServiceChecksInfo
+    public function offsetGet(mixed $offset): Error|string|AgentServiceChecksInfo|null
     {
         if (0 === $offset) {
             return $this->AggregatedStatus;

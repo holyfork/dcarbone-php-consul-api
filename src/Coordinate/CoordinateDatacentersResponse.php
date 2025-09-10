@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class CoordinateDatacentersResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?array $DatacenterMap = null;
+    public array|null $DatacenterMap = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->DatacenterMap;
     }

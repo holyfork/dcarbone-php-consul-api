@@ -37,7 +37,7 @@ class CoordinateEntry extends AbstractModel
 
     public string $Node = '';
     public string $Segment = '';
-    public ?Coordinate $Coord = null;
+    public Coordinate|null $Coord = null;
 
     public function getNode(): string
     {
@@ -61,12 +61,12 @@ class CoordinateEntry extends AbstractModel
         return $this;
     }
 
-    public function getCoord(): ?Coordinate
+    public function getCoord(): Coordinate|null
     {
         return $this->Coord;
     }
 
-    public function setCoord(?Coordinate $Coord): self
+    public function setCoord(Coordinate|null $Coord): self
     {
         $this->Coord = $Coord;
         return $this;

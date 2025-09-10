@@ -58,12 +58,12 @@ class CatalogRegistration extends AbstractModel
     public FakeMap $TaggedAddresses;
     public FakeMap $NodeMeta;
     public string $Datacenter = '';
-    public ?AgentService $Service = null;
-    public ?AgentCheck $Check = null;
+    public AgentService|null $Service = null;
+    public AgentCheck|null $Check = null;
     public HealthChecks $Checks;
     public bool $SkipNodeUpdate = false;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Checks)) {
@@ -143,23 +143,23 @@ class CatalogRegistration extends AbstractModel
         return $this;
     }
 
-    public function getService(): ?AgentService
+    public function getService(): AgentService|null
     {
         return $this->Service;
     }
 
-    public function setService(?AgentService $Service): self
+    public function setService(AgentService|null $Service): self
     {
         $this->Service = $Service;
         return $this;
     }
 
-    public function getCheck(): ?AgentCheck
+    public function getCheck(): AgentCheck|null
     {
         return $this->Check;
     }
 
-    public function setCheck(?AgentCheck $Check): self
+    public function setCheck(AgentCheck|null $Check): self
     {
         $this->Check = $Check;
         return $this;

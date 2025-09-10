@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLPolicyListEntryQueryResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $ACLPolicyListEntries = [];
+    public array|null $ACLPolicyListEntries = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ACLPolicyListEntries;
     }

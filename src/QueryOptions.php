@@ -49,11 +49,11 @@ class QueryOptions extends AbstractModel implements RequestOptions
     public bool $AllowStale = false;
     public bool $RequireConsistent = false;
     public bool $UseCache = false;
-    public ?Time\Duration $MaxAge = null;
-    public ?Time\Duration $StaleIfError = null;
+    public Time\Duration|null $MaxAge = null;
+    public Time\Duration|null $StaleIfError = null;
     public int $WaitIndex = 0;
     public string $WaitHash = '';
-    public ?Time\Duration $WaitTime = null;
+    public Time\Duration|null $WaitTime = null;
     public string $Token = '';
     public string $Near = '';
     public string $Filter = '';
@@ -62,11 +62,11 @@ class QueryOptions extends AbstractModel implements RequestOptions
     public bool $LocalOnly = false;
     public bool $Connect = false;
 
-    public ?Time\Duration $Timeout = null;
+    public Time\Duration|null $Timeout = null;
 
     public bool $Pretty = false;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!($this->MaxAge instanceof Time\Duration)) {
@@ -253,7 +253,7 @@ class QueryOptions extends AbstractModel implements RequestOptions
         $this->Connect = $connect;
     }
 
-    public function getTimeout(): ?Time\Duration
+    public function getTimeout(): Time\Duration|null
     {
         return $this->Timeout;
     }

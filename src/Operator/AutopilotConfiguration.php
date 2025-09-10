@@ -40,10 +40,10 @@ class AutopilotConfiguration extends AbstractModel
     private const FIELD_SERVER_STABILIZATION_TIME = 'ServerStabilizationTime';
 
     public bool $CleanupDeadServers = false;
-    public ?ReadableDuration $LastContactThreshold = null;
+    public ReadableDuration|null $LastContactThreshold = null;
     public int $MaxTrailingLogs = 0;
     public int $MinQuorum = 0;
-    public ?ReadableDuration $ServerStabilizationTime = null;
+    public ReadableDuration|null $ServerStabilizationTime = null;
     public string $RedundancyZoneTag = '';
     public bool $DisableUpgradeMigration = false;
     public string $UpgradeVersionTag = '';
@@ -61,12 +61,12 @@ class AutopilotConfiguration extends AbstractModel
         return $this;
     }
 
-    public function getLastContactThreshold(): ?ReadableDuration
+    public function getLastContactThreshold(): ReadableDuration|null
     {
         return $this->LastContactThreshold;
     }
 
-    public function setLastContactThreshold(?ReadableDuration $LastContactThreshold): self
+    public function setLastContactThreshold(ReadableDuration|null $LastContactThreshold): self
     {
         $this->LastContactThreshold = $LastContactThreshold;
         return $this;
@@ -94,12 +94,12 @@ class AutopilotConfiguration extends AbstractModel
         return $this;
     }
 
-    public function getServerStabilizationTime(): ?ReadableDuration
+    public function getServerStabilizationTime(): ReadableDuration|null
     {
         return $this->ServerStabilizationTime;
     }
 
-    public function setServerStabilizationTime(?ReadableDuration $ServerStabilizationTime): self
+    public function setServerStabilizationTime(ReadableDuration|null $ServerStabilizationTime): self
     {
         $this->ServerStabilizationTime = $ServerStabilizationTime;
         return $this;

@@ -65,11 +65,11 @@ class ServiceConfigEntry extends AbstractModel implements ConfigEntry
 
     public string $Protocol = '';
     public string $Mode = '';
-    public ?TransparentProxyConfig $TransparentProxy = null;
+    public TransparentProxyConfig|null $TransparentProxy = null;
     public MeshGatewayConfig $MeshGateway;
     public ExposeConfig $Expose;
     public string $ExternalSNI = '';
-    public ?UpstreamConfiguration $UpstreamConfig = null;
+    public UpstreamConfiguration|null $UpstreamConfig = null;
 
     public function getProtocol(): string
     {
@@ -93,12 +93,12 @@ class ServiceConfigEntry extends AbstractModel implements ConfigEntry
         return $this;
     }
 
-    public function getTransparentProxy(): ?TransparentProxyConfig
+    public function getTransparentProxy(): TransparentProxyConfig|null
     {
         return $this->TransparentProxy;
     }
 
-    public function setTransparentProxy(?TransparentProxyConfig $TransparentProxy): self
+    public function setTransparentProxy(TransparentProxyConfig|null $TransparentProxy): self
     {
         $this->TransparentProxy = $TransparentProxy;
         return $this;
@@ -137,12 +137,12 @@ class ServiceConfigEntry extends AbstractModel implements ConfigEntry
         return $this;
     }
 
-    public function getUpstreamConfig(): ?UpstreamConfiguration
+    public function getUpstreamConfig(): UpstreamConfiguration|null
     {
         return $this->UpstreamConfig;
     }
 
-    public function setUpstreamConfig(?UpstreamConfiguration $UpstreamConfig): self
+    public function setUpstreamConfig(UpstreamConfiguration|null $UpstreamConfig): self
     {
         $this->UpstreamConfig = $UpstreamConfig;
         return $this;

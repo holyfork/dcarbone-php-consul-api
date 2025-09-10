@@ -42,7 +42,7 @@ class TxnResponse extends AbstractModel
     public TxnResults $Results;
     public TxnErrors $Errors;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->Results)) {

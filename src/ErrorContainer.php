@@ -22,9 +22,9 @@ namespace DCarbone\PHPConsulAPI;
 
 trait ErrorContainer
 {
-    public ?Error $Err = null;
+    public Error|null $Err = null;
 
-    public function getErr(): ?Error
+    public function getErr(): Error|null
     {
         return $this->Err;
     }

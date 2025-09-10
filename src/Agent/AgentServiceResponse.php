@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class AgentServiceResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?AgentService $Service = null;
+    public AgentService|null $Service = null;
 
-    public function getValue(): ?AgentService
+    public function getValue(): AgentService|null
     {
         return $this->Service;
     }

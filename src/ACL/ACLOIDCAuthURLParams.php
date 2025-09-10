@@ -35,7 +35,7 @@ class ACLOIDCAuthURLParams extends AbstractModel
     public string $AuthMethod = '';
     public string $RedirectURI = '';
     public string $ClientNonce = '';
-    public ?FakeMap $Meta = null;
+    public FakeMap|null $Meta = null;
 
     public function getAuthMethod(): string
     {
@@ -70,7 +70,7 @@ class ACLOIDCAuthURLParams extends AbstractModel
         return $this;
     }
 
-    public function getMeta(): ?FakeMap
+    public function getMeta(): FakeMap|null
     {
         return $this->Meta;
     }

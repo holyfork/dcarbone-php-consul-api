@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class AgentMembersResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?array $Members = null;
+    public array|null $Members = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->Members;
     }

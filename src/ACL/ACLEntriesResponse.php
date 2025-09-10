@@ -27,7 +27,7 @@ class ACLEntriesResponse extends AbstractValuedQueryResponse implements Unmarsha
 {
     public array $ACLEntries = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ACLEntries;
     }

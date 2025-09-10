@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class CatalogNodeResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?CatalogNode $Node = null;
+    public CatalogNode|null $Node = null;
 
-    public function getValue(): ?CatalogNode
+    public function getValue(): CatalogNode|null
     {
         return $this->Node;
     }

@@ -31,7 +31,7 @@ use DCarbone\PHPConsulAPI\ValuedStringResponse;
 
 class AgentClient extends AbstractClient
 {
-    private ?MapResponse $_self = null;
+    private MapResponse|null $_self = null;
 
     public function Self(bool $refresh = false): MapResponse
     {
@@ -63,7 +63,7 @@ class AgentClient extends AbstractClient
         return $ret;
     }
 
-    public function Reload(): ?Error
+    public function Reload(): Error|null
     {
         return $this->_executePut('v1/agent/reload', null, null)->Err;
     }
@@ -168,7 +168,7 @@ class AgentClient extends AbstractClient
         return new AgentHealthServicesResponse($status, $dec->Decoded, null);
     }
 
-    public function Service(string $serviceID, ?QueryOptions $opts = null): AgentServiceResponse
+    public function Service(string $serviceID, QueryOptions|null $opts = null): AgentServiceResponse
     {
         $resp = $this->_requireOK($this->_doGet(sprintf('v1/agent/service/%s', $serviceID), $opts));
         $ret  = new AgentServiceResponse();
@@ -197,7 +197,7 @@ class AgentClient extends AbstractClient
         return $ret;
     }
 
-    public function ServiceRegisterOpts(AgentServiceRegistration $service, ServiceRegisterOpts $registerOpts): ?Error
+    public function ServiceRegisterOpts(AgentServiceRegistration $service, ServiceRegisterOpts $registerOpts): Error|null
     {
         $r = $this->_newPutRequest('v1/agent/service/register', $service, null);
         if ($registerOpts->ReplaceExistingChecks) {
@@ -206,33 +206,33 @@ class AgentClient extends AbstractClient
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function ServiceRegister(AgentServiceRegistration $service): ?Error
+    public function ServiceRegister(AgentServiceRegistration $service): Error|null
     {
         return $this->ServiceRegisterOpts($service, new ServiceRegisterOpts(['ReplaceExistingChecks' => false]));
     }
 
-    public function ServiceDeregister(string $serviceID): ?Error
+    public function ServiceDeregister(string $serviceID): Error|null
     {
         $r = new Request(HTTP\MethodPut, sprintf('v1/agent/service/deregister/%s', $serviceID), $this->_config, null);
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function PassTTL(string $checkID, string $note): ?Error
+    public function PassTTL(string $checkID, string $note): Error|null
     {
         return $this->UpdateTTL($checkID, $note, 'pass');
     }
 
-    public function WarnTTL(string $checkID, string $note): ?Error
+    public function WarnTTL(string $checkID, string $note): Error|null
     {
         return $this->UpdateTTL($checkID, $note, 'warn');
     }
 
-    public function FailTTL(string $checkID, string $note): ?Error
+    public function FailTTL(string $checkID, string $note): Error|null
     {
         return $this->UpdateTTL($checkID, $note, 'fail');
     }
 
-    public function UpdateTTL(string $checkID, string $output, string $status): ?Error
+    public function UpdateTTL(string $checkID, string $output, string $status): Error|null
     {
         switch ($status) {
             case Consul::HealthPassing:
@@ -262,17 +262,17 @@ class AgentClient extends AbstractClient
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function CheckRegister(AgentCheckRegistration $check): ?Error
+    public function CheckRegister(AgentCheckRegistration $check): Error|null
     {
         return $this->_executePut('v1/agent/check/register', $check, null)->Err;
     }
 
-    public function CheckDeregister(string $checkID): ?Error
+    public function CheckDeregister(string $checkID): Error|null
     {
         return $this->_executePut(sprintf('v1/agent/check/deregister/%s', $checkID), null, null)->Err;
     }
 
-    public function Join(string $addr, bool $wan = false): ?Error
+    public function Join(string $addr, bool $wan = false): Error|null
     {
         $r = $this->_newPutRequest(sprintf('v1/agent/join/%s', $addr), null, null);
         if ($wan) {
@@ -281,24 +281,24 @@ class AgentClient extends AbstractClient
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function Leave(): ?Error
+    public function Leave(): Error|null
     {
         return $this->_executePut('v1/agent/leave', null, null)->Err;
     }
 
-    public function ForceLeave(string $node): ?Error
+    public function ForceLeave(string $node): Error|null
     {
         return $this->_executePut(sprintf('v1/agent/force-leave/%s', $node), null, null)->Err;
     }
 
-    public function ForceLeavePrune(string $node): ?Error
+    public function ForceLeavePrune(string $node): Error|null
     {
         $r = $this->_newPutRequest(sprintf('v1/agent/force-leave/%s', $node), null, null);
         $r->params->set('prune', '1');
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function EnableServiceMaintenance(string $serviceID, string $reason = ''): ?Error
+    public function EnableServiceMaintenance(string $serviceID, string $reason = ''): Error|null
     {
         $r = $this->_newPutRequest(sprintf('v1/agent/service/maintenance/%s', $serviceID), null, null);
         $r->params->set('enable', 'true');
@@ -306,14 +306,14 @@ class AgentClient extends AbstractClient
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function DisableServiceMaintenance(string $serviceID): ?Error
+    public function DisableServiceMaintenance(string $serviceID): Error|null
     {
         $r = $this->_newPutRequest(sprintf('v1/agent/service/maintenance/%s', $serviceID), null, null);
         $r->params->set('enable', 'false');
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function EnableNodeMaintenance(string $reason = ''): ?Error
+    public function EnableNodeMaintenance(string $reason = ''): Error|null
     {
         $r = $this->_newPutRequest('v1/agent/maintenance', null, null);
         $r->params->set('enable', 'true');
@@ -321,7 +321,7 @@ class AgentClient extends AbstractClient
         return $this->_requireOK($this->_do($r))->Err;
     }
 
-    public function DisableNodeMaintenance(): ?Error
+    public function DisableNodeMaintenance(): Error|null
     {
         $r = $this->_newPutRequest('v1/agent/maintenance', null, null);
         $r->params->set('enable', 'false');

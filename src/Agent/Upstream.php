@@ -61,7 +61,7 @@ class Upstream extends AbstractModel
     public array $Config = [];
     public MeshGatewayConfig $MeshGatewayConfig;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->MeshGatewayConfig)) {

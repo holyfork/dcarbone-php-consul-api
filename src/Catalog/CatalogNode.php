@@ -41,15 +41,15 @@ class CatalogNode extends AbstractModel
     private const FIELD_NODE     = 'Node';
     private const FIELD_SERVICES = 'Services';
 
-    public ?Node $Node = null;
+    public Node|null $Node = null;
     public array $Services = [];
 
-    public function getNode(): ?Node
+    public function getNode(): Node|null
     {
         return $this->Node;
     }
 
-    public function setNode(?Node $Node): self
+    public function setNode(Node|null $Node): self
     {
         $this->Node = $Node;
         return $this;

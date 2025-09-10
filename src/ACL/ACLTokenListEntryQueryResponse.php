@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLTokenListEntryQueryResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $ACLTokenListEntries = [];
+    public array|null $ACLTokenListEntries = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ACLTokenListEntries;
     }

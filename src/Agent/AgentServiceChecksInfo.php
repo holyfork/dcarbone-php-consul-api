@@ -42,10 +42,10 @@ class AgentServiceChecksInfo extends AbstractModel
     private const FIELD_CHECKS  = 'Checks';
 
     public string $AggregatedStatus = '';
-    public ?AgentService $Service = null;
+    public AgentService|null $Service = null;
     public HealthChecks $Checks;
 
-    public function __construct(?array $data = null)
+    public function __construct(array|null $data = null)
     {
         parent::__construct($data);
         if (!isset($this->Checks)) {
@@ -64,12 +64,12 @@ class AgentServiceChecksInfo extends AbstractModel
         return $this;
     }
 
-    public function getService(): ?AgentService
+    public function getService(): AgentService|null
     {
         return $this->Service;
     }
 
-    public function setService(?AgentService $Service): self
+    public function setService(AgentService|null $Service): self
     {
         $this->Service = $Service;
         return $this;

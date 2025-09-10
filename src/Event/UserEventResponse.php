@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class UserEventResponse extends AbstractValuedWriteResponse implements UnmarshalledResponseInterface
 {
-    public ?UserEvent $UserEvent = null;
+    public UserEvent|null $UserEvent = null;
 
-    public function getValue(): ?UserEvent
+    public function getValue(): UserEvent|null
     {
         return $this->UserEvent;
     }

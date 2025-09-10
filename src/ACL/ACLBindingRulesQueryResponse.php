@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ACLBindingRulesQueryResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $ACLBindingRules = [];
+    public array|null $ACLBindingRules = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ACLBindingRules;
     }

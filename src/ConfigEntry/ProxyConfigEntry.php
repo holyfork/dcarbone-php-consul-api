@@ -56,8 +56,8 @@ class ProxyConfigEntry extends AbstractModel implements ConfigEntry
     private const FIELD_EXPOSE            = 'Expose';
 
     public string $Mode = '';
-    public ?TransparentProxyConfig $TransparentProxy = null;
-    public ?FakeMap $Config = null;
+    public TransparentProxyConfig|null $TransparentProxy = null;
+    public FakeMap|null $Config = null;
     public MeshGatewayConfig $MeshGateway;
     public ExposeConfig $Expose;
 
@@ -72,18 +72,18 @@ class ProxyConfigEntry extends AbstractModel implements ConfigEntry
         return $this;
     }
 
-    public function getTransparentProxy(): ?TransparentProxyConfig
+    public function getTransparentProxy(): TransparentProxyConfig|null
     {
         return $this->TransparentProxy;
     }
 
-    public function setTransparentProxy(?TransparentProxyConfig $TransparentProxy): self
+    public function setTransparentProxy(TransparentProxyConfig|null $TransparentProxy): self
     {
         $this->TransparentProxy = $TransparentProxy;
         return $this;
     }
 
-    public function getConfig(): ?FakeMap
+    public function getConfig(): FakeMap|null
     {
         return $this->Config;
     }

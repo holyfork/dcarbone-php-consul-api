@@ -38,7 +38,7 @@ class CheckTxnOp extends AbstractModel
     public string $Verb = '';
     public HealthCheck $Check;
 
-    public function __construct(?array $data = [])
+    public function __construct(array|null $data = [])
     {
         parent::__construct($data);
         if (!isset($this->Check)) {

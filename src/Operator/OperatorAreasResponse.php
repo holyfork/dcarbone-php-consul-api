@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class OperatorAreasResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $Areas = null;
+    public array|null $Areas = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->Areas;
     }

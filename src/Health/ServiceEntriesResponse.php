@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class ServiceEntriesResponse extends AbstractValuedQueryResponse implements UnmarshalledResponseInterface
 {
-    public ?array $ServiceEntries = null;
+    public array|null $ServiceEntries = null;
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->ServiceEntries;
     }

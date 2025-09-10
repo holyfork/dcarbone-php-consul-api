@@ -24,7 +24,7 @@ trait ResponseValueStringsTrait
 {
     public array $Value = [];
 
-    public function getValue(): ?array
+    public function getValue(): array|null
     {
         return $this->Value;
     }

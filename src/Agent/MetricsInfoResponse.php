@@ -25,9 +25,9 @@ use DCarbone\PHPConsulAPI\UnmarshalledResponseInterface;
 
 class MetricsInfoResponse extends AbstractValuedResponse implements UnmarshalledResponseInterface
 {
-    public ?MetricsInfo $MetricsInfo = null;
+    public MetricsInfo|null $MetricsInfo = null;
 
-    public function getValue(): ?MetricsInfo
+    public function getValue(): MetricsInfo|null
     {
         return $this->MetricsInfo;
     }
